@@ -56,14 +56,14 @@ public class PlanetController {
 }
 
 
-//1. Create planet
-//        2. View one planet data along with satellites data
-//        3. List of all planets with paging and filter by planet name
-//        4. List of all planets with paging and sorted by number of satellites
-//        5. Update planet data
-//        6. Delete planet
-//        7. Create satellite
-//        8. List of all satellites of one planet
-//        9. View of one satellite
-//        10. Update satellite data
-//        11. Delete satellite
+//        1. Create planet +
+//        2. View one planet data along with satellites data +
+//        3. List of all planets with paging and filter by planet name +
+//        4. List of all planets with paging and sorted by number of satellites +
+//        5. Update planet data +
+//        6. Delete planet +
+//        7. Create satellite +
+//        8. List of all satellites of one planet +
+//        9. View of one satellite +
+//        10. Update satellite data +
+//        11. Delete satellite +
