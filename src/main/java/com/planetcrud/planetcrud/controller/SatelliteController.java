@@ -1,6 +1,7 @@
 package com.planetcrud.planetcrud.controller;
+
 import com.planetcrud.planetcrud.dto.SatelliteDTO;
-import com.planetcrud.planetcrud.model.Planet;
+import com.planetcrud.planetcrud.exceptions.SatelliteNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -41,5 +42,12 @@ public class SatelliteController {
     public ResponseEntity<String> deleteSatellite(@PathVariable("id") Long id) {
         System.out.println("DELETE SATELLITE");
         return new ResponseEntity<>(null, HttpStatus.OK);
+    }
+
+    @ExceptionHandler(SatelliteNotFoundException.class)
+    public ResponseEntity<String> satelliteNotFound(SatelliteNotFoundException exception) {
+        long id = exception.getSatelliteId();
+        String errorMessage = "Satellite with id: " + id + "not found.";
+        return new ResponseEntity<>(errorMessage, HttpStatus.NOT_FOUND);
     }
 }

@@ -1,6 +1,7 @@
 package com.planetcrud.planetcrud.model;
 
 
+import com.planetcrud.planetcrud.dto.SatelliteDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -30,5 +31,13 @@ public class Satellite {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "planet_id", nullable = false)
     private Planet planet;
+
+    public Satellite(SatelliteDTO satelliteDTO, Planet planet) {
+        this.planet = planet;
+        this.name = satelliteDTO.getName();;
+        this.surfaceArea = satelliteDTO.getSurfaceArea();
+        this.mass = satelliteDTO.getMass();
+        this.naturalSatellite = satelliteDTO.getNaturalSatellite();
+    }
 
 }
