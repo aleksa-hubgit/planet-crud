@@ -45,6 +45,7 @@ public class Planet {
         this.surfaceArea = planetDTO.getSurfaceArea();;
         this.mass = planetDTO.getMass();
         this.distanceFromSun = planetDTO.getDistanceFromSun();
+        this.averageSurfaceTemperature = planetDTO.getAverageSurfaceTemperature();
         this.satellites = new ArrayList<>();
         if (planetDTO.getSatellites() != null)
             planetDTO.getSatellites().forEach(satelliteDTO -> satellites.add(new Satellite(satelliteDTO, this)));

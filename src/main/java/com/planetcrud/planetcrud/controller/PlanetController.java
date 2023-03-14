@@ -49,9 +49,11 @@ public class PlanetController {
     @GetMapping("")
     public ResponseEntity<List<PlanetDTO>> getFilteredByName(Pageable pageable) {
         System.out.println("GET FILTERED PLANETS");
+        System.out.println(pageable.toString());
         return new ResponseEntity<>(convertToDTOS(planetService.getPlanetsByPageable(pageable)), HttpStatus.OK);
     }
 
+    // ovaj u sustini nije potreban samo treba da se gadja api na /planets?page=0&size=3&sort=satelliteCount,asc|desc
     @GetMapping("/satellites")
     public ResponseEntity<List<PlanetDTO>> getSortedBySatellites(@RequestParam(defaultValue = "0") int page,
                                                               @RequestParam(defaultValue = "10") int size) {

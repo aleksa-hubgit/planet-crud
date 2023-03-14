@@ -29,7 +29,7 @@ public class PlanetDTO {
         this.surfaceArea = planet.getSurfaceArea();
         this.mass = planet.getMass();
         this.distanceFromSun = planet.getDistanceFromSun();
-        this.averageSurfaceTemperature = getAverageSurfaceTemperature();
+        this.averageSurfaceTemperature = planet.getAverageSurfaceTemperature();
         this.satellites = new ArrayList<>();
         planet.getSatellites().forEach(satellite -> satellites.add(new SatelliteDTO(satellite)));
     }
